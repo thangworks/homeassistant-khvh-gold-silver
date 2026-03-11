@@ -7,5 +7,5 @@
   "iot_class": "cloud_polling",
   "loggers": ["custom_components.kim_khanh_viet_hung_gia_vang_bac"],
   "requirements": [],
-  "version": "1.0.0"
+  "version": "1.0.1"
 }
