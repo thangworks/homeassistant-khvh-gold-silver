@@ -2,6 +2,10 @@
 
 Custom integration cho Home Assistant để lấy giá vàng/bạc từ trang Kim Khánh Việt Hùng.
 
+## Project URL
+
+- GitHub: `https://github.com/thangworks/homeassistant-khvh-gold-silver`
+
 ## Tính năng
 
 - Tự động trích xuất bảng giá từ: `https://kimkhanhviethung.vn/tra-cuu-gia-vang.html`
@@ -17,10 +21,17 @@ Custom integration cho Home Assistant để lấy giá vàng/bạc từ trang Ki
 ## Cài bằng HACS (Custom Repository)
 
 1. Vào HACS -> Integrations -> menu 3 chấm -> `Custom repositories`.
-2. Thêm URL repo này, chọn loại `Integration`.
+2. Thêm URL: `https://github.com/thangworks/homeassistant-khvh-gold-silver`, chọn loại `Integration`.
 3. Tìm `Kim Khánh Việt Hùng - Giá Vàng Bạc` và cài đặt.
 4. Khởi động lại Home Assistant.
 5. Vào `Settings -> Devices & Services -> Add Integration` và tìm `Kim Khánh Việt Hùng`.
+
+## Cài thủ công (không dùng HACS)
+
+1. Tải source từ: `https://github.com/thangworks/homeassistant-khvh-gold-silver`.
+2. Copy thư mục `custom_components/kim_khanh_viet_hung_gia_vang_bac` vào thư mục `config/custom_components` của Home Assistant.
+3. Khởi động lại Home Assistant.
+4. Vào `Settings -> Devices & Services -> Add Integration` và tìm `Kim Khánh Việt Hùng`.
 
 ## Cấu hình
 
