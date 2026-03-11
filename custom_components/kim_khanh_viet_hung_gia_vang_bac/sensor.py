@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import re
 
 from homeassistant.components.sensor import SensorEntity, SensorEntityDescription
 from homeassistant.config_entries import ConfigEntry
@@ -21,6 +22,15 @@ def _row_key(group: str, name: str) -> str:
     return slugify(f"{group}_{name}")
 
 
+def _compact_row_name(name: str) -> str:
+    """Normalize row name for shorter, cleaner entity names."""
+    normalized = re.sub(r"\s+", " ", name).strip()
+    normalized = re.sub(r"\(\s*", "(", normalized)
+    normalized = re.sub(r"\s*\)", ")", normalized)
+    normalized = re.sub(r"^\s*khvh\s*", "", normalized, flags=re.IGNORECASE)
+    return normalized
+
+
 @dataclass(frozen=True, kw_only=True)
 class KimKhanhSensorDescription(SensorEntityDescription):
     """Sensor description."""
@@ -31,21 +41,21 @@ class KimKhanhSensorDescription(SensorEntityDescription):
 DESCRIPTIONS: tuple[KimKhanhSensorDescription, ...] = (
     KimKhanhSensorDescription(
         key="buy",
-        name="Buy Price",
+        name="Buy",
         field="buy",
         icon="mdi:cash-plus",
         native_unit_of_measurement="VND",
     ),
     KimKhanhSensorDescription(
         key="sell",
-        name="Sell Price",
+        name="Sell",
         field="sell",
         icon="mdi:cash-minus",
         native_unit_of_measurement="VND",
     ),
     KimKhanhSensorDescription(
         key="exchange",
-        name="Exchange Price",
+        name="Exchange",
         field="exchange",
         icon="mdi:swap-horizontal",
         native_unit_of_measurement="VND",
@@ -98,7 +108,7 @@ class KimKhanhPriceSensor(CoordinatorEntity[KimKhanhPriceCoordinator], SensorEnt
         self._row_id = row_id
         self._group = group
         self._attr_has_entity_name = False
-        self._attr_name = f"KHVH {row_name} {description.name}"
+        self._attr_name = f"{_compact_row_name(row_name)} {description.name}"
         self._attr_unique_id = f"{entry_id}_{row_id}_{description.key}"
         self._attr_device_info = DeviceInfo(
             identifiers={(DOMAIN, entry_id)},
