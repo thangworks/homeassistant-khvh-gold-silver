@@ -1,0 +1,28 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Kim Khánh Việt Hùng - Giá Vàng Bạc",
+        "description": "Thiết lập nguồn dữ liệu giá vàng bạc.",
+        "data": {
+          "url": "URL nguồn dữ liệu",
+          "scan_interval_hours": "Chu kỳ cập nhật (giờ)"
+        }
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "Chỉ cho phép một cấu hình."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Tùy chọn",
+        "data": {
+          "url": "URL nguồn dữ liệu",
+          "scan_interval_hours": "Chu kỳ cập nhật (giờ)"
+        }
+      }
+    }
+  }
+}

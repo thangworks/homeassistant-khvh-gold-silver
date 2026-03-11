@@ -1,0 +1,3 @@
+refresh_prices:
+  name: Refresh prices
+  description: Manually refresh KHVH gold/silver prices immediately.

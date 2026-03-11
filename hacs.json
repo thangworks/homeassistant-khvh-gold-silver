@@ -1,0 +1,10 @@
+{
+  "name": "Kim Khánh Việt Hùng - Giá Vàng Bạc",
+  "content_in_root": false,
+  "country": "VN",
+  "domains": ["sensor"],
+  "homeassistant": "2024.6.0",
+  "iot_class": "cloud_polling",
+  "render_readme": true,
+  "filename": "custom_components/kim_khanh_viet_hung_gia_vang_bac/manifest.json"
+}

@@ -1,0 +1,11 @@
+{
+  "domain": "kim_khanh_viet_hung_gia_vang_bac",
+  "name": "Kim Khánh Việt Hùng - Giá Vàng Bạc",
+  "codeowners": ["@kimkhanhviethung"],
+  "config_flow": true,
+  "documentation": "https://github.com/thangworks/homeassistant-khvh-gold-silver",
+  "iot_class": "cloud_polling",
+  "loggers": ["custom_components.kim_khanh_viet_hung_gia_vang_bac"],
+  "requirements": [],
+  "version": "1.0.0"
+}
